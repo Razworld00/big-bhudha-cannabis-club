@@ -213,44 +213,59 @@
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script>
-    // Sync cart total from localStorage
+    // Sync cart total from localStorage with error handling
     let cart = JSON.parse(localStorage.getItem('cart')) || {};
     function updateTotal() {
-      let total = 0;
-      for (const [product, quantity] of Object.entries(cart)) {
-        if (quantity > 0) {
-          let price = { edibles: 150, vapes: 200, oils: 180, flower: 250 }[product];
-          total += price * quantity;
-          const discount = applyOffer();
-          total = Math.max(0, total - discount);
+      try {
+        let total = 0;
+        for (const [product, quantity] of Object.entries(cart)) {
+          if (quantity > 0) {
+            let price = { edibles: 150, vapes: 200, oils: 180, flower: 250 }[product] || 0;
+            total += price * quantity;
+            const discount = applyOffer();
+            total = Math.max(0, total - discount);
+          }
         }
+        document.getElementById('modal-total').textContent = total.toFixed(2);
+      } catch (e) {
+        console.error('Error updating total:', e);
+        document.getElementById('modal-total').textContent = '0.00';
       }
-      document.getElementById('modal-total').textContent = total.toFixed(2);
     }
     updateTotal();
     window.addEventListener('storage', updateTotal);
 
     function applyOffer() {
-      const items = Object.keys(cart).length;
-      if (items >= 3) {
-        const prices = Object.keys(cart).map(p => ({ p, v: { edibles: 150, vapes: 200, oils: 180, flower: 250 }[p] * cart[p] }));
-        prices.sort((a, b) => a.v - b.v);
-        return prices[0].v; // Cheapest item free
+      try {
+        const items = Object.keys(cart).length;
+        if (items >= 3) {
+          const prices = Object.keys(cart).map(p => ({ p, v: ({ edibles: 150, vapes: 200, oils: 180, flower: 250 }[p] || 0) * cart[p] }));
+          prices.sort((a, b) => a.v - b.v);
+          return prices[0].v || 0; // Cheapest item free
+        }
+        return 0;
+      } catch (e) {
+        console.error('Error applying offer:', e);
+        return 0;
       }
-      return 0;
     }
 
-    // Payment Link Generation
+    // Payment Link Generation with error handling
     function generatePaymentLink() {
-      const email = document.getElementById('customer-email').value;
-      if (!email) {
-        alert('Please enter your email.');
-        return;
+      try {
+        const email = document.getElementById('customer-email').value;
+        if (!email) {
+          alert('Please enter your email.');
+          return;
+        }
+        const total = parseFloat(document.getElementById('modal-total').textContent) || 0;
+        const link = `https://pay.ikhokha.com/link?amount=${total}&email=${encodeURIComponent(email)}&ref=BigBhudhaStore`;
+        document.getElementById('payment-link').innerHTML = `<a href="${link}" target="_blank" class="text-blue-400 underline">Click to Pay with iK Pay Link</a>`;
+        alert(`Payment link generated. Total: R${total}. Check your email for confirmation. (Simulated)`);
+      } catch (e) {
+        console.error('Error generating payment link:', e);
+        alert('An error occurred. Please try again or contact support.');
       }
-      const total = parseFloat(document.getElementById('modal-total').textContent);
-      const link = `https://pay.ikhokha.com/link?amount=${total}&email=${encodeURIComponent(email)}&ref=BigBhudhaStore`;
-      document.getElementById('payment-link').innerHTML = `<a href="${link}" target="_blank" class="text-blue-400 underline">Click to Pay with iK Pay Link</a>`;
-      alert(`Payment link generated. Total: R${total}. Check your email for confirmation. (Simulated)`);
     }
   </script>
 </body>
