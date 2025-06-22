@@ -123,113 +123,99 @@
     .banner p {
       font-size: 1.2rem;
     }
-    .coming-soon, .catalogue, .faqs, .testimonials, .contact-form {
+    .category-section, .offer-section, .about-section, .membership-section, .wellbeing-section, .blog-section {
       background: rgba(42, 92, 76, 0.9);
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin-bottom: 2rem;
     }
-    .coming-soon h2, .catalogue h2, .faqs h2, .testimonials h2, .contact-form h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .coming-soon p, .catalogue p, .faqs p, .testimonials p, .contact-form p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .catalogue-item {
+    .category-item, .wellbeing-item {
       display: inline-block;
       margin: 1rem;
       padding: 1rem;
       background: #1a3c34;
       border-radius: 8px;
       width: 200px;
+      transition: transform 0.3s ease;
     }
-    .catalogue-item i {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: #00A651;
+    .category-item:hover, .wellbeing-item:hover {
+      transform: scale(1.05);
     }
-    .countdown {
-      font-size: 1.1rem;
-      color: #d4a017;
-      margin-top: 1rem;
-    }
-    .subscribe-btn {
-      background: #00A651;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: 1rem;
-    }
-    .subscribe-btn:hover {
-      background: #00843D;
-    }
-    .payment-section {
-      margin-top: 2rem;
-      background: rgba(26, 60, 52, 0.9);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .payment-section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .payment-section img {
-      max-width: 100px;
+    .category-item img, .wellbeing-item img {
+      max-width: 100%;
       height: auto;
-      margin-bottom: 1rem;
-    }
-    .payment-section p {
-      font-size: 1.1rem;
-    }
-    .payment-section i {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #00A651;
-    }
-    .faq-item {
-      margin-bottom: 1rem;
-    }
-    .faq-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-    .testimonial {
-      margin-bottom: 1.5rem;
-    }
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: 0.5rem;
-    }
-    .testimonial span {
-      font-weight: bold;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #d4a017;
       border-radius: 5px;
-      background: #1a3c34;
-      color: #d4a017;
     }
-    .contact-form button {
+    .cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background: #00A651;
       color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .cart-item button {
+      background: #00843D;
+      color: #fff;
       border: none;
-      padding: 0.75rem 1.5rem;
+      padding: 0.25rem 0.5rem;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
-    .contact-form button:hover {
-      background: #00843D;
+    .cart-item button:hover {
+      background: #006633;
+    }
+    .checkout-btn {
+      background: #d4a017;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .checkout-btn:hover {
+      background: #b38600;
+    }
+    .payment-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+    }
+    .payment-modal-content {
+      background: #2a5c4c;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      color: #d4a017;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
     @media (max-width: 768px) {
       .navbar { padding: 1rem; }
@@ -240,9 +226,9 @@
       .header img { max-width: 100px; margin: 0.5rem 0; }
       .header-subimage { max-width: 150px; margin-top: -20px; }
       .shop-container { padding: 1rem; }
-      .coming-soon, .catalogue, .faqs, .testimonials, .payment-section, .contact-form { padding: 1rem; }
-      .catalogue-item { width: 100%; margin: 0.5rem 0; }
+      .category-item, .wellbeing-item { width: 100%; margin: 0.5rem 0; }
       .banner h1 { font-size: 2rem; }
+      .cart { bottom: 10px; right: 10px; width: 90%; }
     }
   </style>
 </head>
@@ -250,16 +236,11 @@
   <nav class="navbar">
     <div class="nav-menu">
       <a href="index.html" class="nav-item">Home</a>
-      <div class="nav-item relative">
-        About
-        <div class="dropdown">
-          <a href="index.html#mission">Our Mission</a>
-          <a href="./assets/Constitution of the Big Bhudha Pablo Cannabis Club (1)_101302.pdf" target="_blank">Constitution (PDF)</a>
-        </div>
-      </div>
-      <a href="index.html#join" class="nav-item">Join Us</a>
-      <a href="index.html#contact" class="nav-item">Contact</a>
-      <a href="store.html" class="nav-item">Shop</a>
+      <a href="#shop" class="nav-item">Shop</a>
+      <a href="#about" class="nav-item">About Us</a>
+      <a href="#membership" class="nav-item">Membership</a>
+      <a href="#wellbeing" class="nav-item">Wellbeing</a>
+      <a href="#blog" class="nav-item">Blog</a>
     </div>
   </nav>
 
@@ -275,139 +256,207 @@
   <div class="shop-container">
     <div class="banner">
       <h1>Shop with Confidence</h1>
-      <p>Coming Soon: Secure, fast online shopping powered by iKhokha. Stay tuned for premium cannabis products!</p>
+      <p>Discover premium cannabis products at Big Bhudha Pablo Cannabis Club. Enjoy exclusive offers and secure, fast online shopping powered by iKhokha. Launching soon on July 1, 2025!</p>
+      <img src="./assets/offer-banner-placeholder.jpg" alt="Special Offer Banner" class="mt-2" style="max-width: 100%; border-radius: 5px;">
     </div>
 
-    <div class="coming-soon">
-      <h2>Store - Coming Soon</h2>
-      <p>We are excited to bring you a premium selection of cannabis products. Our online store is under development and will launch soon with a wide range of high-quality items.</p>
-      <div class="countdown" id="countdown">Launch in: Calculating...</div>
-      <button class="subscribe-btn" onclick="alert('Thank you for subscribing! Check your email for updates.')">Subscribe for Updates</button>
-    </div>
-
-    <div class="catalogue">
-      <h2>Catalogue Preview</h2>
-      <p>Explore our upcoming product lineup:</p>
-      <div class="catalogue-item">
-        <i class="fas fa-shopping-cart"></i>
-        <h3>Organic Cannabis Edibles</h3>
-        <p>Coming Soon - Crafted with natural ingredients for a flavorful experience.</p>
+    <div class="category-section" id="shop">
+      <h2 class="text-2xl font-semibold mb-4">Shop Categories</h2>
+      <div class="category-item">
+        <img src="./assets/edibles-placeholder.jpg" alt="Edibles">
+        <h3>Edibles</h3>
+        <p>Explore our delicious cannabis-infused edibles, crafted with organic ingredients for a flavorful and therapeutic experience.</p>
+        <button class="add-to-cart bg-green-700 text-white px-2 py-1 rounded" data-product="edibles">Add to Cart - R150</button>
       </div>
-      <div class="catalogue-item">
-        <i class="fas fa-droplet"></i>
-        <h3>CBD Oil</h3>
-        <p>Coming Soon - Pure, organic CBD oil for wellness and relaxation.</p>
+      <div class="category-item">
+        <img src="./assets/vapes-placeholder.jpg" alt="Vapes">
+        <h3>Vapes</h3>
+        <p>Browse our high-quality cannabis vapes, designed for smooth inhalation with cutting-edge technology and potent blends.</p>
+        <button class="add-to-cart bg-green-700 text-white px-2 py-1 rounded" data-product="vapes">Add to Cart - R200</button>
       </div>
-      <div class="catalogue-item">
-        <i class="fas fa-leaf"></i>
-        <h3>Premium Weed</h3>
-        <p>Coming Soon - High-quality strains grown organically for potency.</p>
+      <div class="category-item">
+        <img src="./assets/oils-placeholder.jpg" alt="Oils">
+        <h3>Oils</h3>
+        <p>Shop our premium cannabis oils, ideal for wellness, relaxation, and customizable dosing in various strengths.</p>
+        <button class="add-to-cart bg-green-700 text-white px-2 py-1 rounded" data-product="oils">Add to Cart - R180</button>
       </div>
-    </div>
-
-    <div class="payment-section">
-      <h3>Payment - Coming Soon</h3>
-      <img src="./assets/ikhokha-logo-placeholder.jpg" alt="iKhokha Logo" class="mx-auto">
-      <img src="./assets/ik-pay-link-icon.jpg" alt="iK Pay Link Icon" class="mx-auto" style="max-width: 80px; margin-bottom: 1rem;">
-      <img src="./assets/secure-payment-icon.jpg" alt="Secure Payment Icon" class="mx-auto" style="max-width: 80px; margin-bottom: 1rem;">
-      <i class="fas fa-credit-card"></i>
-      <p>Powered by iK Pay Link: Accept payments easily with a secure link sent via WhatsApp, SMS, or email. No website or tech skills needed—customers pay with cards or bank accounts, and funds are deposited directly into your account. Rated 84% for ease of use by merchants.</p>
-      <p><strong>Key Features:</strong></p>
-      <ul class="text-left mx-auto" style="max-width: 400px;">
-        <li>Quick one-click payments with bank-level security.</li>
-        <li>Free setup via iKhokha App or iK Dashboard.</li>
-        <li>Supports mobile payments, donations, and multiple transactions from one link.</li>
-        <li>Instant support at +27 87 222 7000 or support@ikhokha.com.</li>
-      </ul>
-      <p>Trusted by businesses and winner of MTN’s 2023 App of the Year. Available soon!</p>
-      <a href="#" class="text-gray-400 cursor-not-allowed" onclick="return false;">Checkout (Coming Soon)</a>
-    </div>
-
-    <div class="faqs">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <h3>When will the store launch?</h3>
-        <p>The store is set to launch on July 1, 2025. Stay updated via our subscription alerts!</p>
-      </div>
-      <div class="faq-item">
-        <h3>What payment methods will be available?</h3>
-        <p>Initially, we will support iKhokha Pay Link for secure online payments with plans to add more options later.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Can I pre-order products?</h3>
-        <p>Pre-orders will be available closer to the launch date. Sign up for updates to be notified!</p>
+      <div class="category-item">
+        <img src="./assets/flower-placeholder.jpg" alt="Flower + Pre-rolls">
+        <h3>Flower + Pre-rolls</h3>
+        <p>Explore our top-tier cannabis flowers and pre-rolls, organically cultivated for maximum potency and purity.</p>
+        <button class="add-to-cart bg-green-700 text-white px-2 py-1 rounded" data-product="flower">Add to Cart - R250</button>
       </div>
     </div>
 
-    <div class="testimonials">
-      <h2>What Our Members Say</h2>
-      <div class="testimonial">
-        <p>"I’m excited for the store launch—great quality cannabis at fair prices!" - Luzuko D.</p>
-        <span>Member since 2024</span>
-      </div>
-      <div class="testimonial">
-        <p>"The organic approach is what drew me in. Can’t wait to shop!" - Nkululeko K.</p>
-        <span>Member since 2025</span>
+    <div class="offer-section">
+      <h2 class="text-2xl font-semibold mb-4">Special Offer</h2>
+      <p>Choose 3, only pay for 2! The cheapest item is on us when you buy any three products—mix and match your favorites. Discount applied at checkout. Valid until June 30, 2025. Terms and Conditions apply.</p>
+    </div>
+
+    <div class="about-section" id="about">
+      <h2 class="text-2xl font-semibold mb-4">About Us</h2>
+      <p>Welcome to Big Bhudha Pablo Cannabis Club, South Africa’s leading destination for premium cannabis products since 2024. We are committed to providing high-quality CBD and THC edibles, vapes, oils, flowers, and pre-rolls, all crafted with innovation, organic cultivation, and exceptional care. Our mission is to foster a legal, private cannabis community in the Eastern Cape.</p>
+    </div>
+
+    <div class="membership-section" id="membership">
+      <h2 class="text-2xl font-semibold mb-4">Membership Benefits</h2>
+      <p>As a distinguished member, gain privileged access to top-tier cannabis products, including exclusive THC offerings. Membership is free and offers:</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div class="wellbeing-item">
+          <img src="./assets/membership-badge-placeholder.jpg" alt="Membership Badge">
+          <h3>Member Products</h3>
+          <p>Exclusive access to premium THC products and limited-edition strains.</p>
+        </div>
+        <div class="wellbeing-item">
+          <img src="./assets/membership-badge-placeholder.jpg" alt="Member Care">
+          <h3>Member Care</h3>
+          <p>Enjoy special offers, loyalty rewards, and personalized support.</p>
+        </div>
+        <div class="wellbeing-item">
+          <img src="./assets/membership-badge-placeholder.jpg" alt="Thoughtful Gifts">
+          <h3>Thoughtful Gifts</h3>
+          <p>Receive personalized gifts and exclusive givebacks as a token of appreciation.</p>
+        </div>
       </div>
     </div>
 
-    <div class="contact-form">
-      <h2>Contact Us About the Store</h2>
-      <p>Get in touch for more information or support regarding our upcoming store.</p>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit" onclick="alert('Message sent! We’ll get back to you soon.'); return false;">Send Message</button>
-      </form>
+    <div class="wellbeing-section" id="wellbeing">
+      <h2 class="text-2xl font-semibold mb-4">Essential Wellbeing</h2>
+      <p>Discover the transformative benefits of cannabis for your health and relaxation. Our products are formulated to address:</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div class="wellbeing-item">
+          <img src="./assets/wellbeing-sleep-placeholder.jpg" alt="Sleep Aid">
+          <h3>Sleep Aid</h3>
+          <p>Products designed to promote deep, restful sleep with CBD, THC, and CBN blends.</p>
+        </div>
+        <div class="wellbeing-item">
+          <img src="./assets/wellbeing-relax-placeholder.jpg" alt="Relax">
+          <h3>Relax</h3>
+          <p>Ease anxiety and enjoy blissful relaxation with our specially crafted formulations.</p>
+        </div>
+        <div class="wellbeing-item">
+          <img src="./assets/wellbeing-pain-placeholder.jpg" alt="Pain Relief">
+          <h3>Pain Relief</h3>
+          <p>Manage pain and inflammation naturally with our effective cannabis solutions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-section" id="blog">
+      <h2 class="text-2xl font-semibold mb-4">Our Blog</h2>
+      <p>Stay informed with our latest posts on cannabis trends, cultivation tips, and industry news. Check back for updates on Cannabis 101 and more.</p>
     </div>
   </div>
 
-  <footer id="contact" class="footer">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div>
-        <h3 class="text-xl font-semibold">Contact Us</h3>
-        <p>Email: <a href="mailto:louieleefilms@gmail.com" style="color: #d4a017; text-decoration: underline;">louieleefilms@gmail.com</a></p>
-        <p>Phone: +27 72 605 7389</p>
-        <p>Address: Farm A80, Cove Rock, East London, South Africa</p>
-      </div>
-      <div class="social-icons">
-        <h3 class="text-xl font-semibold">Follow Us</h3>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold">Legal</h3>
-        <p><a href="./assets/Constitution of the Big Bhudha Pablo Cannabis Club (1)_101302.pdf" target="_blank">Download Constitution</a></p>
-        <p class="mt-2 text-sm">Disclaimer: This website and club operate under the Cannabis for Private Purposes Act of 2024. Membership and activities are private and non-commercial. Consult legal advice for compliance.</p>
-      </div>
+  <div class="cart">
+    <h3>Shopping Cart</h3>
+    <div id="cart-items"></div>
+    <p>Total: R<span id="cart-total">0</span></p>
+    <button class="checkout-btn" onclick="showPaymentModal()">Checkout</button>
+  </div>
+
+  <div id="payment-modal" class="payment-modal">
+    <div class="payment-modal-content">
+      <span class="close-modal" onclick="hidePaymentModal()">×</span>
+      <h3>Secure Checkout</h3>
+      <p>Generate your iK Pay Link for a secure payment. Total: R<span id="modal-total">0</span></p>
+      <input type="text" id="customer-email" placeholder="Enter your email" class="w-full p-2 mb-2 bg-gray-800 text-white border border-gray-600 rounded">
+      <button class="bg-green-700 text-white px-4 py-2 rounded" onclick="generatePaymentLink()">Generate Payment Link</button>
+      <p id="payment-link" class="mt-2"></p>
     </div>
-    <p class="mt-4 text-sm">© 2025 Big Bhudha Pablo Cannabis Club. All rights reserved.</p>
-    <p class="mt-2 text-sm">Built by: Raznet Solutions | <a href="mailto:bathie28@gmail.com" style="color: #d4a017; text-decoration: underline;">bathie28@gmail.com</a></p>
+  </div>
+
+  <footer class="bg-green-900 text-white p-4 text-center">
+    <p>Age Verification: You must be 18 years or older to access this website. By entering, you agree to our Terms of Use and Privacy Policy.</p>
+    <p>Subscribe to our mailing list and get R100 off your first order of R500 or more!</p>
+    <p>Follow us on <a href="#" class="text-yellow-400">Instagram</a></p>
+    <p>© 2025 Big Bhudha Pablo Cannabis Club. All rights reserved.</p>
   </footer>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script>
-    // Countdown Timer
-    function updateCountdown() {
-      const launchDate = new Date("2025-07-01T00:00:00Z").getTime();
-      const now = new Date().getTime();
-      const distance = launchDate - now;
+    // Cart Management
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const product = button.getAttribute('data-product');
+        cart[product] = (cart[product] || 0) + 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+      });
+    });
 
-      document.getElementById("countdown").innerHTML = `Launch in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    function updateCart() {
+      const cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+      let total = 0;
 
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "Launch Now!";
+      for (const [product, quantity] of Object.entries(cart)) {
+        if (quantity > 0) {
+          let price = { edibles: 150, vapes: 200, oils: 180, flower: 250 }[product];
+          const itemTotal = price * quantity;
+          total += itemTotal;
+          const discount = applyOffer();
+          total = Math.max(0, total - discount); // Ensure total doesn't go negative
+
+          cartItems.innerHTML += `
+            <div class="cart-item">
+              <span>${product.charAt(0).toUpperCase() + product.slice(1)} (x${quantity}) - R${itemTotal}</span>
+              <div>
+                <button onclick="changeQuantity('${product}', -1)">-</button>
+                <button onclick="changeQuantity('${product}', 1)">+</button>
+              </div>
+            </div>
+          `;
+        }
       }
+
+      document.getElementById('cart-total').textContent = total.toFixed(2);
+      document.getElementById('modal-total').textContent = total.toFixed(2);
     }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+
+    function changeQuantity(product, delta) {
+      cart[product] = Math.max(0, (cart[product] || 0) + delta);
+      if (cart[product] === 0) delete cart[product];
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCart();
+    }
+
+    function applyOffer() {
+      const items = Object.keys(cart).length;
+      if (items >= 3) {
+        const prices = Object.keys(cart).map(p => ({ p, v: { edibles: 150, vapes: 200, oils: 180, flower: 250 }[p] * cart[p] }));
+        prices.sort((a, b) => a.v - b.v);
+        return prices[0].v; // Cheapest item free
+      }
+      return 0;
+    }
+
+    // Payment Modal
+    function showPaymentModal() {
+      document.getElementById('payment-modal').style.display = 'block';
+    }
+
+    function hidePaymentModal() {
+      document.getElementById('payment-modal').style.display = 'none';
+    }
+
+    function generatePaymentLink() {
+      const email = document.getElementById('customer-email').value;
+      if (!email) {
+        alert('Please enter your email.');
+        return;
+      }
+      const total = parseFloat(document.getElementById('cart-total').textContent);
+      const link = `https://pay.ikhokha.com/link?amount=${total}&email=${encodeURIComponent(email)}&ref=BigBhudhaStore`;
+      document.getElementById('payment-link').innerHTML = `<a href="${link}" target="_blank" class="text-blue-400 underline">Click to Pay with iK Pay Link</a>`;
+      alert(`Payment link generated. Total: R${total}. Check your email for confirmation. (Simulated)`);
+    }
+
+    // Initialize
+    updateCart();
+    window.addEventListener('storage', updateCart);
   </script>
 </body>
 </html>
