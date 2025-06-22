@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the Big Bhudha Pablo Cannabis Club for legal, organic cannabis cultivation in South Africa.">
+  <title>Big Bhudha Pablo Cannabis Club</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a3c34 0%, #2a5c4c 100%);
+      color: #d4a017;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.75;
+    }
+    .header {
+      background: url('./assets/logo.jpg') no-repeat center center;
+      background-size: contain;
+      height: 200px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero {
+      background: url('./assets/buddha-leaves.jpg') no-repeat center center;
+      background-size: cover;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      background: rgba(42, 92, 76, 0.8);
+      border-radius: 10px;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(42, 92, 76, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .constitution-content {
+      display: none;
+      padding: 1rem;
+      background: rgba(26, 60, 52, 0.9);
+      margin-top: 1rem;
+      border-radius: 5px;
+    }
+    .constitution-content.active {
+      display: block;
+    }
+    .img-responsive {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+      margin: 1rem auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .hero { height: 300px; }
+      .section { padding: 1rem; }
+      .img-responsive { max-width: 100%; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="header text-center py-6">
+    <h1 class="text-4xl font-bold mt-20">Big Bhudha Pablo Cannabis Club</h1>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2 class="text-3xl font-semibold mb-4">Why Join a Cannabis Growing Club?</h2>
+      <p>The Big Bhudha Pablo Cannabis Club is a private, members-only collective where adults can access top-quality, legally cultivated organic cannabis—grown with care, for your personal use.</p>
+      <p>As a member, our Master Grower and team handle organic cultivation on private land in Cove Rock, East London.</p>
+      <ul class="list-disc list-inside mt-4">
+        <li>🌿 Organic Outdoor</li>
+        <li>🌿 Organic Greenhouse</li>
+        <li>🌿 Organic Indoor</li>
+      </ul>
+      <p class="mt-4">Up to 5 plants per member per season, with harvests dried, cured, and packaged for you.</p>
+      <p>Support the grow, receive your share—clean, potent, and private.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">Who We Are</h2>
+    <p class="text-lg">Leading the Organic Cannabis Club Movement in the Eastern Cape, we unite responsible adults in a legal, private community. Members get up to 5 plants per season, grown organically and distributed without commercial sales.</p>
+    <img src="./assets/buddha-seal.jpg" alt="Buddha with cannabis seal" class="img-responsive">
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">New Clubhouse Launch: Scenery Park, East London</h2>
+    <p class="text-lg">Launching 20 June 2025. Members can engage safely, learn about growing, and build community.</p>
+    <p class="text-lg mt-2">Expand with us—seeking distributors and community leaders!</p>
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">How It Works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="text-center p-4 bg-green-800 rounded-lg">
+        <h3 class="text-xl mb-2">Step 1: Join</h3>
+        <p>Fill out the membership form and choose your clubhouse.</p>
+      </div>
+      <div class="text-center p-4 bg-green-800 rounded-lg">
+        <h3 class="text-xl mb-2">Step 2: Contribute</h3>
+        <p>Donate to support organic growing costs.</p>
+      </div>
+      <div class="text-center p-4 bg-green-800 rounded-lg">
+        <h3 class="text-xl mb-2">Step 3: Receive</h3>
+        <p>Get your private harvest delivered within 72 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">Legal Protection</h2>
+    <p class="text-lg">Members sign an agreement for us to cultivate on their behalf. No sales—just private, organic grows returned as your property.</p>
+    <ul class="list-disc list-inside mt-2">
+      <li><strong>Direct Delivery</strong> - Discreet, nationwide within 72 hours.</li>
+      <li><strong>Premium Quality</strong> - Organic, cost-price cannabis.</li>
+      <li><strong>Quality Control</strong> - Pure, potent strains.</li>
+      <li><strong>Legal Compliance</strong> - We handle all logistics.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
+    <p class="text-lg">A safe, private cannabis culture grounded in freedom and legal cultivation, inspired by the 2024 Cannabis Act.</p>
+    <p class="text-lg mt-2">🔰 Our Approach: Organically, privately, with care—never sold, only shared.</p>
+    <img src="./assets/buddha-field.jpg" alt="Buddha in cannabis field" class="img-responsive">
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">Constitution</h2>
+    <button id="toggleConstitution" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none">View Constitution</button>
+    <div id="constitutionContent" class="constitution-content">
+      <h3 class="text-xl mt-4">Adopted: 02 June 2025</h3>
+      <h4 class="text-lg mt-4">1. Name</h4>
+      <p>The name of the association is the Big Bhudha Pablo Cannabis Club, hereafter referred to as "the Club."</p>
+      <h4 class="text-lg mt-4">2. Legal Nature</h4>
+      <p>The Club is a private, non-profit voluntary association, operating separately with its own legal rights.</p>
+      <h4 class="text-lg mt-4">3. Purpose</h4>
+      <ul class="list-disc list-inside">
+        <li>Cultivate organic cannabis for private use, complying with South African law.</li>
+        <li>Promote sustainable farming and responsible consumption.</li>
+        <li>Offer a safe alternative to the black market.</li>
+        <li>Facilitate fair distribution to members.</li>
+      </ul>
+      <h4 class="text-lg mt-4">4. Cultivation and Distribution</h4>
+      <ul class="list-disc list-inside">
+        <li>Up to 5 plants per member per season.</li>
+        <li>Grown at Farm A80, Cove Rock, East London.</li>
+        <li>Organic methods: Outdoor, Greenhouse, Indoor.</li>
+        <li>Members donate for growing costs; no sales, only shares.</li>
+      </ul>
+      <h4 class="text-lg mt-4">5. Membership</h4>
+      <p><strong>Eligibility:</strong> Adults (18+) supporting the Club’s goals.</p>
+      <p><strong>Rights & Responsibilities:</strong></p>
+      <ul class="list-disc list-inside">
+        <li>Participate in activities and decision-making.</li>
+        <li>Receive harvest shares.</li>
+        <li>Use responsibly, respect privacy.</li>
+      </ul>
+      <h4 class="text-lg mt-4">6. Management Committee</h4>
+      <ul class="list-disc list-inside">
+        <li>Chairperson & Master Grower: Anton Van Blerk</li>
+        <li>Vice-Chairperson & Property Owner: Loyiso Livingstone Gwanya</li>
+        <li>Treasurer: Derek Daluxolo Gwanya</li>
+        <li>Distribution Manager: Phathekile Jamle</li>
+      </ul>
+      <p>Oversees operations, finances, and updates members.</p>
+    </div>
+  </section>
+
+  <section class="section text-center">
+    <h2 class="text-2xl font-semibold mb-4">Join Us</h2>
+    <p class="text-lg">Become a member: Fill out the form, choose Scenery Park, and visit to register.</p>
+    <p class="text-lg mt-2">Big Bhudha Pablo Cannabis Club - Rooted in respect. Growing in freedom.</p>
+    <a href="https://bit.ly/BigBhudha" class="bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-600 mt-4 inline-block">Join Now</a>
+  </section>
+
+  <footer class="bg-green-900 p-6 text-center">
+    <p>Join us at <a href="https://bit.ly/BigBhudha" class="text-yellow-400 hover:underline">https://bit.ly/BigBhudha</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('toggleConstitution').addEventListener('click', function() {
+      const content = document.getElementById('constitutionContent');
+      content.classList.toggle('active');
+      this.textContent = content.classList.contains('active') ? 'Hide Constitution' : 'View Constitution';
+    });
+  </script>
+</body>
+</html>
