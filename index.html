@@ -69,10 +69,21 @@
       color: #fff;
     }
     .header {
-      background: url('./assets/logo.jpg') no-repeat center center;
-      background-size: contain;
-      height: 200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 150px;
+      padding: 1rem 2rem;
+      background: #1a3c34;
       animation: fadeIn 2s ease-in-out;
+    }
+    .header img {
+      max-width: 120px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .header img:hover {
+      transform: scale(1.05);
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -159,6 +170,8 @@
       .navbar { padding: 1rem; }
       .nav-menu { flex-direction: column; gap: 1rem; }
       .dropdown { position: static; transform: none; opacity: 1; visibility: visible; }
+      .header { flex-direction: column; height: auto; }
+      .header img { max-width: 100px; margin: 0.5rem 0; }
       .hero { height: 300px; }
       .section { padding: 1rem; }
       .img-responsive { max-width: 100%; }
@@ -181,8 +194,10 @@
     </div>
   </nav>
 
-  <header class="header text-center py-6">
-    <h1 class="text-4xl font-bold mt-20">Big Bhudha Pablo Cannabis Club</h1>
+  <header class="header text-center">
+    <img src="./assets/logo.jpg" alt="Left Logo" class="logo-left">
+    <h1 class="text-4xl font-bold mx-auto">Big Bhudha Pablo Cannabis Club</h1>
+    <img src="./assets/big-bhudha.png" alt="Right Logo" class="logo-right">
   </header>
 
   <section id="home" class="hero">
