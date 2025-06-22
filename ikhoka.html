@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure payment solutions with iKhokha at Big Bhudha Pablo Cannabis Club.">
+  <title>Big Bhudha Pablo Cannabis Club - iKhokha Payment</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a3c34 0%, #2a5c4c 100%);
+      color: #d4a017;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.75;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg, #1a3c34, #2a5c4c);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-item {
+      color: #d4a017;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    .nav-item:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background: #1a3c34;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .header img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .content {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .hero {
+      background: #00A651;
+      color: #fff;
+      padding: 3rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .benefit-card {
+      background: rgba(42, 92, 76, 0.9);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: scale(1.05);
+    }
+    .benefit-card img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .faq {
+      background: #1a3c34;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    .faq h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .faq p {
+      margin-bottom: 0.5rem;
+    }
+    .checkout-section {
+      background: #00A651;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .checkout-section input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+      background: #2a5c4c;
+      color: #d4a017;
+    }
+    .checkout-section button {
+      background: #d4a017;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .checkout-section button:hover {
+      background: #b38600;
+    }
+    .footer {
+      background: #00A651;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .navbar { padding: 1rem; }
+      .nav-menu { flex-direction: column; gap: 1rem; }
+      .hero { padding: 1.5rem; }
+      .benefits { grid-template-columns: 1fr; }
+      .checkout-section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="navbar">
+    <div class="nav-menu">
+      <a href="store.html" class="nav-item">Store</a>
+      <a href="store.html#about" class="nav-item">About Us</a>
+      <a href="store.html#membership" class="nav-item">Membership</a>
+      <a href="store.html#wellbeing" class="nav-item">Wellbeing</a>
+      <a href="store.html#blog" class="nav-item">Blog</a>
+    </div>
+  </nav>
+
+  <header class="header text-center">
+    <img src="./assets/ikhokha-logo-placeholder.jpg" alt="iKhokha Logo">
+    <h1 class="text-4xl font-bold">Secure Payments with iKhokha</h1>
+  </header>
+
+  <div class="content">
+    <div class="hero">
+      <h2 class="text-3xl font-semibold">Pay Safely, Shop with Ease</h2>
+      <p>Experience seamless transactions with iKhokha, South Africa’s trusted payment solution, integrated into Big Bhudha Pablo Cannabis Club. Generate your unique iK Pay Link and enjoy secure, instant payments.</p>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit-card">
+        <img src="./assets/ik-pay-link-icon.jpg" alt="iK Pay Link Icon">
+        <h3 class="text-xl font-semibold">Instant iK Pay Links</h3>
+        <p>Get a personalized payment link for every purchase, emailed to you for quick and easy payment.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="./assets/secure-payment-icon.jpg" alt="Secure Payment Icon">
+        <h3 class="text-xl font-semibold">Top-Notch Security</h3>
+        <p>Your transactions are protected with advanced encryption and fraud prevention technology.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="./assets/ikhokha-secure-shield-placeholder.jpg" alt="Security Shield">
+        <h3 class="text-xl font-semibold">24/7 Support</h3>
+        <p>Our team is available around the clock to assist with any payment queries or issues.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h3 class="text-2xl font-semibold">Frequently Asked Questions</h3>
+      <p><strong>How do I pay with iK Pay Link?</strong> Enter your email at checkout, and we’ll send you a secure link to complete your payment.</p>
+      <p><strong>Is my data safe?</strong> Yes, iKhokha uses industry-leading security to protect your information.</p>
+      <p><strong>What if I have issues?</strong> Contact our support team via the link below or visit <a href="https://www.ikhokha.com/support" class="text-blue-400 underline" target="_blank">iKhokha Support</a>.</p>
+    </div>
+
+    <div class="checkout-section">
+      <h3 class="text-2xl font-semibold mb-2">Checkout with iKhokha</h3>
+      <p>Total: R<span id="modal-total">0</span> (synced from your cart)</p>
+      <input type="text" id="customer-email" placeholder="Enter your email" class="w-full p-2 mb-2 bg-gray-800 text-white border border-gray-600 rounded">
+      <button class="bg-green-700 text-white px-4 py-2 rounded" onclick="generatePaymentLink()">Generate Payment Link</button>
+      <p id="payment-link" class="mt-2"></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Back to <a href="store.html" class="text-white underline">Store</a> | © 2025 Big Bhudha Pablo Cannabis Club</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Sync cart total from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    function updateTotal() {
+      let total = 0;
+      for (const [product, quantity] of Object.entries(cart)) {
+        if (quantity > 0) {
+          let price = { edibles: 150, vapes: 200, oils: 180, flower: 250 }[product];
+          total += price * quantity;
+          const discount = applyOffer();
+          total = Math.max(0, total - discount);
+        }
+      }
+      document.getElementById('modal-total').textContent = total.toFixed(2);
+    }
+    updateTotal();
+    window.addEventListener('storage', updateTotal);
+
+    function applyOffer() {
+      const items = Object.keys(cart).length;
+      if (items >= 3) {
+        const prices = Object.keys(cart).map(p => ({ p, v: { edibles: 150, vapes: 200, oils: 180, flower: 250 }[p] * cart[p] }));
+        prices.sort((a, b) => a.v - b.v);
+        return prices[0].v; // Cheapest item free
+      }
+      return 0;
+    }
+
+    // Payment Link Generation
+    function generatePaymentLink() {
+      const email = document.getElementById('customer-email').value;
+      if (!email) {
+        alert('Please enter your email.');
+        return;
+      }
+      const total = parseFloat(document.getElementById('modal-total').textContent);
+      const link = `https://pay.ikhokha.com/link?amount=${total}&email=${encodeURIComponent(email)}&ref=BigBhudhaStore`;
+      document.getElementById('payment-link').innerHTML = `<a href="${link}" target="_blank" class="text-blue-400 underline">Click to Pay with iK Pay Link</a>`;
+      alert(`Payment link generated. Total: R${total}. Check your email for confirmation. (Simulated)`);
+    }
+  </script>
+</body>
+</html>
