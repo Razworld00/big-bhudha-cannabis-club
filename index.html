@@ -70,12 +70,18 @@
     }
     .header {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      height: 150px;
+      height: auto; /* Adjusted to auto for better flexibility */
       padding: 1rem 2rem;
       background: #1a3c34;
       animation: fadeIn 2s ease-in-out;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 0.5rem; /* Reduced to give more space for the image */
     }
     .header img {
       max-width: 120px;
@@ -84,6 +90,12 @@
     }
     .header img:hover {
       transform: scale(1.05);
+    }
+    .header-subimage {
+      max-width: 250px; /* Increased size for better visibility */
+      height: auto;
+      margin-top: -30px; /* Adjusted upward to show fully */
+      margin-bottom: 1rem; /* Added space below to prevent overlap */
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -170,8 +182,10 @@
       .navbar { padding: 1rem; }
       .nav-menu { flex-direction: column; gap: 1rem; }
       .dropdown { position: static; transform: none; opacity: 1; visibility: visible; }
-      .header { flex-direction: column; height: auto; }
+      .header { height: auto; }
+      .header-top { flex-direction: column; align-items: center; }
       .header img { max-width: 100px; margin: 0.5rem 0; }
+      .header-subimage { max-width: 150px; margin-top: -20px; } /* Adjusted for mobile */
       .hero { height: 300px; }
       .section { padding: 1rem; }
       .img-responsive { max-width: 100%; }
@@ -195,9 +209,12 @@
   </nav>
 
   <header class="header text-center">
-    <img src="./assets/logo.jpg" alt="Left Logo" class="logo-left">
-    <h1 class="text-4xl font-bold mx-auto">Big Bhudha Pablo Cannabis Club</h1>
-    <img src="./assets/big-bhudha.png" alt="Right Logo" class="logo-right">
+    <div class="header-top">
+      <img src="./assets/big-bhudha.png" alt="Left Logo" class="logo-left">
+      <h1 class="text-4xl font-bold mx-auto">Big Bhudha Pablo Cannabis Club</h1>
+      <img src="./assets/big-bhudha.png" alt="Right Logo" class="logo-right">
+    </div>
+    <img src="./assets/logo.jpg" alt="Logo Image" class="header-subimage">
   </header>
 
   <section id="home" class="hero">
@@ -219,6 +236,24 @@
     <h2 class="text-2xl font-semibold mb-4">Who We Are</h2>
     <p class="text-lg">Leading the Organic Cannabis Club Movement in the Eastern Cape, we unite responsible adults in a legal, private community. Members get up to 5 plants per season, grown organically and distributed without commercial sales.</p>
     <img src="./assets/buddha-seal.jpg" alt="Buddha with cannabis seal" class="img-responsive">
+  </section>
+
+  <section class="section">
+    <h2 class="text-2xl font-semibold mb-4">Club Information</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+      <div class="bg-green-800 p-4 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Membership</h3>
+        <p>Joining is simple: complete our membership form, select your preferred clubhouse, and contribute to the organic growing costs. Members receive up to 5 plants per season, cultivated legally on their behalf.</p>
+      </div>
+      <div class="bg-green-800 p-4 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Legal Compliance</h3>
+        <p>Operating under the Cannabis for Private Purposes Act of 2024, we ensure all activities are private and non-commercial. Your harvest is returned as your property, with full legal protection.</p>
+      </div>
+      <div class="bg-green-800 p-4 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Benefits</h3>
+        <p>Enjoy premium, organic cannabis at cost price, discreet delivery within 72 hours, and access to a supportive community. Expand with us by becoming a distributor or leader.</p>
+      </div>
+    </div>
   </section>
 
   <section class="section">
