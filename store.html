@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop premium cannabis products at Big Bhudha Pablo Cannabis Club.">
+  <title>Big Bhudha Pablo Cannabis Club - Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a3c34 0%, #2a5c4c 100%);
+      color: #d4a017;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.75;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg, #1a3c34, #2a5c4c);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-item {
+      position: relative;
+      color: #d4a017;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    .nav-item:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #2a5c4c;
+      min-width: 150px;
+      border-radius: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #d4a017;
+      text-decoration: none;
+    }
+    .dropdown a:hover {
+      background: #1a3c34;
+      color: #fff;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding: 1rem 2rem;
+      background: #1a3c34;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .header img {
+      max-width: 100px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .header img:hover {
+      transform: scale(1.05);
+    }
+    .header-subimage {
+      max-width: 150px;
+      height: auto;
+      margin-top: -30px;
+      margin-bottom: 1rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .shop-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .banner {
+      background: #00A651;
+      color: #FFFFFF;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .banner h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .banner p {
+      font-size: 1.2rem;
+    }
+    .coming-soon, .catalogue, .faqs, .testimonials, .contact-form {
+      background: rgba(42, 92, 76, 0.9);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    .coming-soon h2, .catalogue h2, .faqs h2, .testimonials h2, .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .coming-soon p, .catalogue p, .faqs p, .testimonials p, .contact-form p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .catalogue-item {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem;
+      background: #1a3c34;
+      border-radius: 8px;
+      width: 200px;
+    }
+    .catalogue-item i {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #00A651;
+    }
+    .countdown {
+      font-size: 1.1rem;
+      color: #d4a017;
+      margin-top: 1rem;
+    }
+    .subscribe-btn {
+      background: #00A651;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 1rem;
+    }
+    .subscribe-btn:hover {
+      background: #00843D;
+    }
+    .payment-section {
+      margin-top: 2rem;
+      background: rgba(26, 60, 52, 0.9);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .payment-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .payment-section img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .payment-section p {
+      font-size: 1.1rem;
+    }
+    .payment-section i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00A651;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial {
+      margin-bottom: 1.5rem;
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial span {
+      font-weight: bold;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #d4a017;
+      border-radius: 5px;
+      background: #1a3c34;
+      color: #d4a017;
+    }
+    .contact-form button {
+      background: #00A651;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #00843D;
+    }
+    @media (max-width: 768px) {
+      .navbar { padding: 1rem; }
+      .nav-menu { flex-direction: column; gap: 1rem; }
+      .dropdown { position: static; transform: none; opacity: 1; visibility: visible; }
+      .header { height: auto; }
+      .header-top { flex-direction: column; align-items: center; }
+      .header img { max-width: 100px; margin: 0.5rem 0; }
+      .header-subimage { max-width: 150px; margin-top: -20px; }
+      .shop-container { padding: 1rem; }
+      .coming-soon, .catalogue, .faqs, .testimonials, .payment-section, .contact-form { padding: 1rem; }
+      .catalogue-item { width: 100%; margin: 0.5rem 0; }
+      .banner h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="navbar">
+    <div class="nav-menu">
+      <a href="index.html" class="nav-item">Home</a>
+      <div class="nav-item relative">
+        About
+        <div class="dropdown">
+          <a href="index.html#mission">Our Mission</a>
+          <a href="./assets/Constitution of the Big Bhudha Pablo Cannabis Club (1)_101302.pdf" target="_blank">Constitution (PDF)</a>
+        </div>
+      </div>
+      <a href="index.html#join" class="nav-item">Join Us</a>
+      <a href="index.html#contact" class="nav-item">Contact</a>
+      <a href="store.html" class="nav-item">Shop</a>
+    </div>
+  </nav>
+
+  <header class="header text-center">
+    <div class="header-top">
+      <img src="./assets/big-bhudha.png" alt="Left Logo" class="logo-left">
+      <h1 class="text-4xl font-bold mx-auto">Big Bhudha Pablo Cannabis Club - Store</h1>
+      <img src="./assets/big-bhudha.png" alt="Right Logo" class="logo-right">
+    </div>
+    <img src="./assets/logo.jpg" alt="Logo Image" class="header-subimage">
+  </header>
+
+  <div class="shop-container">
+    <div class="banner">
+      <h1>Shop with Confidence</h1>
+      <p>Coming Soon: Secure, fast online shopping powered by iKhokha. Stay tuned for premium cannabis products!</p>
+    </div>
+
+    <div class="coming-soon">
+      <h2>Store - Coming Soon</h2>
+      <p>We are excited to bring you a premium selection of cannabis products. Our online store is under development and will launch soon with a wide range of high-quality items.</p>
+      <div class="countdown" id="countdown">Launch in: Calculating...</div>
+      <button class="subscribe-btn" onclick="alert('Thank you for subscribing! Check your email for updates.')">Subscribe for Updates</button>
+    </div>
+
+    <div class="catalogue">
+      <h2>Catalogue Preview</h2>
+      <p>Explore our upcoming product lineup:</p>
+      <div class="catalogue-item">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Organic Cannabis Edibles</h3>
+        <p>Coming Soon - Crafted with natural ingredients for a flavorful experience.</p>
+      </div>
+      <div class="catalogue-item">
+        <i class="fas fa-droplet"></i>
+        <h3>CBD Oil</h3>
+        <p>Coming Soon - Pure, organic CBD oil for wellness and relaxation.</p>
+      </div>
+      <div class="catalogue-item">
+        <i class="fas fa-leaf"></i>
+        <h3>Premium Weed</h3>
+        <p>Coming Soon - High-quality strains grown organically for potency.</p>
+      </div>
+    </div>
+
+    <div class="payment-section">
+      <h3>Payment - Coming Soon</h3>
+      <img src="./assets/ikhokha-logo-placeholder.jpg" alt="iKhokha Logo" class="mx-auto">
+      <i class="fas fa-credit-card"></i>
+      <p>Powered by iKhokha: Secure payments with a 2.85% (excl. VAT) transaction fee, bank-level encryption, and no hardware needed. Available soon!</p>
+      <p>Enjoy fast processing and a seamless checkout experience once launched.</p>
+      <a href="#" class="text-gray-400 cursor-not-allowed" onclick="return false;">Checkout (Coming Soon)</a>
+    </div>
+
+    <div class="faqs">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>When will the store launch?</h3>
+        <p>The store is set to launch on July 1, 2025. Stay updated via our subscription alerts!</p>
+      </div>
+      <div class="faq-item">
+        <h3>What payment methods will be available?</h3>
+        <p>Initially, we will support iKhokha Pay Link for secure online payments with plans to add more options later.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I pre-order products?</h3>
+        <p>Pre-orders will be available closer to the launch date. Sign up for updates to be notified!</p>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <h2>What Our Members Say</h2>
+      <div class="testimonial">
+        <p>"I’m excited for the store launch—great quality cannabis at fair prices!" - John D.</p>
+        <span>Member since 2024</span>
+      </div>
+      <div class="testimonial">
+        <p>"The organic approach is what drew me in. Can’t wait to shop!" - Sarah K.</p>
+        <span>Member since 2025</span>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Contact Us About the Store</h2>
+      <p>Get in touch for more information or support regarding our upcoming store.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" onclick="alert('Message sent! We’ll get back to you soon.'); return false;">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer id="contact" class="footer">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <h3 class="text-xl font-semibold">Contact Us</h3>
+        <p>Email: <a href="mailto:louieleefilms@gmail.com" style="color: #d4a017; text-decoration: underline;">louieleefilms@gmail.com</a></p>
+        <p>Phone: +27 72 605 7389</p>
+        <p>Address: Farm A80, Cove Rock, East London, South Africa</p>
+      </div>
+      <div class="social-icons">
+        <h3 class="text-xl font-semibold">Follow Us</h3>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold">Legal</h3>
+        <p><a href="./assets/Constitution of the Big Bhudha Pablo Cannabis Club (1)_101302.pdf" target="_blank">Download Constitution</a></p>
+        <p class="mt-2 text-sm">Disclaimer: This website and club operate under the Cannabis for Private Purposes Act of 2024. Membership and activities are private and non-commercial. Consult legal advice for compliance.</p>
+      </div>
+    </div>
+    <p class="mt-4 text-sm">© 2025 Big Bhudha Pablo Cannabis Club. All rights reserved.</p>
+    <p class="mt-2 text-sm">Built by: Raznet Solutions | <a href="mailto:bathie28@gmail.com" style="color: #d4a017; text-decoration: underline;">bathie28@gmail.com</a></p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const launchDate = new Date("2025-07-01T00:00:00Z").getTime();
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `Launch in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Launch Now!";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
